@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8df6f1b-ec0b-42e1-8444-9865c056acba" name="Changes" comment="Добавил dir app" />
+    <list default="true" id="625bb32d-4d2a-4508-8be7-117a0152ec28" name="Changes" comment="Добавлена чтение">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/PDF-XChange.Editor.Plus.v9.4.364.0-portable.exe" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <execution />
   </component>
   <component name="Git.Settings">
@@ -16,16 +22,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2EwuQuNUyWZtIAmV8WNLE5WV71R" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2FJLNrjlWR5K2XDananDnY0M2fg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -33,48 +35,43 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b8df6f1b-ec0b-42e1-8444-9865c056acba" name="Changes" comment="" />
-      <created>1663518958667</created>
+      <changelist id="625bb32d-4d2a-4508-8be7-117a0152ec28" name="Changes" comment="" />
+      <created>1664205207340</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1663518958667</updated>
-      <workItem from="1663518960189" duration="1075000" />
+      <updated>1664205207340</updated>
+      <workItem from="1664205209667" duration="1228000" />
+      <workItem from="1664516740597" duration="326000" />
+      <workItem from="1664517080230" duration="213000" />
+      <workItem from="1665065787803" duration="32000" />
     </task>
-    <task id="LOCAL-00001" summary="Добавил dir app">
-      <created>1663519115544</created>
+    <task id="LOCAL-00001" summary="Добавлена чтение">
+      <created>1664516786228</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1663519115544</updated>
+      <updated>1664516786228</updated>
     </task>
-    <task id="LOCAL-00002" summary="Добавил dir app">
-      <created>1663519525013</created>
+    <task id="LOCAL-00002" summary="Добавлена чтение">
+      <created>1664516892464</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1663519525013</updated>
+      <updated>1664516892464</updated>
     </task>
-    <task id="LOCAL-00003" summary="Добавил dir app">
-      <created>1663519977258</created>
+    <task id="LOCAL-00003" summary="Добавлена чтение">
+      <created>1664517030561</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1663519977258</updated>
+      <updated>1664517030561</updated>
     </task>
-    <task id="LOCAL-00004" summary="Добавил dir app">
-      <created>1663520025305</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1663520025305</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,9 +89,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Добавил dir app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил dir app" />
+    <MESSAGE value="Добавлена чтение" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена чтение" />
   </component>
 </project>
