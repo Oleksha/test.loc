@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="mt-1">Заявка на оплату</h1>
         <?php if ($partner) : ?>
-            <?php //debug($_SESSION['form_data']); ?>
+            <?php debug($payment); ?>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?=PATH;?>">Главная</a></li>
@@ -59,17 +59,20 @@
                             </div>
                             <div class="has-feedback col-md-12">
                                 <label for="number">Оплачиваемое поступление</label>
+                                <?php $receipt_pay = explode(';', $payment['receipts_id']); ?>
+                                <?php foreach($receipt_pay as $item) : ?>
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="inputGroupSelect01">Номер</label>
                                     <select class="form-select" id="inputGroupSelect01">
-                                        <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <!--<option selected>Choose...</option>-->
+                                        <?php foreach($receipt_all as $value) : ?>
+                                            <option value="<?=$value['id'];?>"><?=$value['number'];?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                     <label class="input-group-text" for="inputGroupSelect02">Сумма</label>
                                     <input type="text" name="Receipt_sum" class="form-control" id="inputGroupSelect02" placeholder="" value="<?=isset($_SESSION['form_data']['sum_er']) ? $_SESSION['form_data']['sum_er'] : '';?>" required>
                                 </div>
+                                <?php endforeach; ?>
                                 <button class="btn btn-outline-secondary" type="button">Добавить еще однорое</button>
                             </div>
 

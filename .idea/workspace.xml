@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="625bb32d-4d2a-4508-8be7-117a0152ec28" name="Changes" comment="Добавлена чтение">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html/PDF-XChange.Editor.Plus.v9.4.364.0-portable.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PartnerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Partner/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Partner/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,7 @@
       <workItem from="1664516740597" duration="326000" />
       <workItem from="1664517080230" duration="213000" />
       <workItem from="1665065787803" duration="32000" />
+      <workItem from="1668250037214" duration="4430000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлена чтение">
       <created>1664516786228</created>
@@ -71,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664517030561</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавлена чтение">
+      <created>1668250239476</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668250239476</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
