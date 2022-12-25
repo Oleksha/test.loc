@@ -10,6 +10,10 @@ use Exception;
 
 class PartnerController extends AppController {
 
+    /**
+     * Обрабатывает Выдачу информации обо всех КА
+     * @return void
+     */
     public function indexAction() {
         // создаем необходимые объекты связи с БД
         $partner_models = new Partner(); // Контрагенты
@@ -33,6 +37,11 @@ class PartnerController extends AppController {
         $this->set(compact('partners'));
     }
 
+    /**
+     * Обрабатывает Выдачу информации о выбранном КА
+     * @return void
+     * @throws Exception
+     */
     public function viewAction() {
         // создаем необходимые объекты связи с БД
         $partner_models = new Partner(); // Контрагенты
@@ -82,6 +91,10 @@ class PartnerController extends AppController {
         return $ers;
     }
 
+    /**
+     * Изменяет данные о КА
+     * @return false|void
+     */
     public function editAction() {
         // очищаем сессию чтобы в ней небыло никаких данных
         unset($_SESSION['form_data']);
@@ -103,6 +116,10 @@ class PartnerController extends AppController {
         redirect();
     }
 
+    /**
+     * Сохраняет данные о КА после изменения
+     * @return void
+     */
     public function editPartnerAction() {
         // получаем данные пришедшие методом POST
         $data = !empty($_POST) ? $_POST : null;
@@ -113,6 +130,10 @@ class PartnerController extends AppController {
         redirect();
     }
 
+    /**
+     * Обработка заявки на оплату
+     * @return void
+     */
     public function paymentAction() {
         // получаем переданные GET данные
         $receipt_id = !empty($_GET['receipt']) ? (int)$_GET['receipt'] : null; // идентификатор прихода
@@ -133,13 +154,13 @@ class PartnerController extends AppController {
         // получаем всю информацию о КА
         $partner = $partner_model->getPartner($receipt['id_partner']);
         /* Получаем все действующие ЕР для этого КА на момент прихода */
-        $ers = $er_model->getERFromDate($partner['id'], $receipt['date']);
+        $ers = $er_model->getERFromDatePayment($partner['id'], $receipt['date']);
         $er = [];
         foreach ($ers as $k => $v) {
             $er[$k]['id'] = $v['id'];                                             // идентификатор
             $er[$k]['budget'] = $v['name_budget_item'];                           // статья расхода
             $er[$k]['number'] = $v['number'];                                     // номер ЕР
-            $er[$k]['summa'] = round($v['summa'] - $v['costs'],2);  // остаток денежных средств
+            //$er[$k]['summa'] = round($v['summa'] - $v['costs'],2);  // остаток денежных средств
         }
         $ers = $er;
         // Передаем полученные данные в вид

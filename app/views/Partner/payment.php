@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="mt-1">Заявка на оплату</h1>
         <?php if ($partner) : ?>
-            <?php debug($payment); ?>
+            <?php debug($payment);debug($ers); ?>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?=PATH;?>">Главная</a></li>
@@ -31,70 +31,40 @@
                         <div class="row g-3">
                             <div class="col-12 has-feedback">
                                 <label for="name">Наименование контрагента</label>
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Наименование КА" value="<?= $_SESSION['form_data']['partner'] ?? $partner['name'];?>" disabled>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Наименование КА" value="<?= $partner['name'] ?? 'Нет данных';?>" disabled>
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="date">Дата заявки на оплату</label>
-                                <input type="date" name="date" class="form-control" id="date" placeholder="01.01.2021" value="<?php
-                                if (isset($_SESSION['form_data']['date'])) {
-                                    echo trim($_SESSION['form_data']['date'], ' ');
-                                } elseif (isset($payment['date'])) {
-                                    echo trim($payment['date'],' ');
-                                }?>" required>
+                                <input type="date" name="date" class="form-control" id="date" placeholder="01.01.2021" value="<?= $payment['date'] ?? '';?>" required>
                                 <div class="invalid-feedback">
                                     Введите дату формирования заявки на оплату
                                 </div>
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="number">Номер заявки</label>
-                                <input type="text" name="number" class="form-control" id="number" placeholder="Номер" value="<?php
-                                if (isset($_SESSION['form_data']['number'])) {
-                                    echo trim($_SESSION['form_data']['number'], ' ');
-                                } elseif (isset($payment['number'])) {
-                                    echo trim($payment['number'],' ');
-                                }?>" required>
+                                <input type="text" name="number" class="form-control" id="number" placeholder="Номер" value="<?= $payment['number'] ?? '';?>" required>
                                 <div class="invalid-feedback">
                                     Введите номер сформированной заявки на оплату
                                 </div>
                             </div>
-                            <div class="has-feedback col-md-12">
-                                <label for="number">Оплачиваемое поступление</label>
-                                <?php $receipt_pay = explode(';', $payment['receipts_id']); ?>
-                                <?php foreach($receipt_pay as $item) : ?>
-                                <div class="input-group mb-3">
-                                    <label class="input-group-text" for="inputGroupSelect01">Номер</label>
-                                    <select class="form-select" id="inputGroupSelect01">
-                                        <!--<option selected>Choose...</option>-->
-                                        <?php foreach($receipt_all as $value) : ?>
-                                            <option value="<?=$value['id'];?>"><?=$value['number'];?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                    <label class="input-group-text" for="inputGroupSelect02">Сумма</label>
-                                    <input type="text" name="Receipt_sum" class="form-control" id="inputGroupSelect02" placeholder="" value="<?=isset($_SESSION['form_data']['sum_er']) ? $_SESSION['form_data']['sum_er'] : '';?>" required>
-                                </div>
-                                <?php endforeach; ?>
-                                <button class="btn btn-outline-secondary" type="button">Добавить еще однорое</button>
-                            </div>
-
                             <div class="has-feedback col-md-6">
                                 <label for="sum_select" id="sum">Сумма оплаты</label>
                                 <select name="sum[]" id="sum_select" data-placeholder="Выберите сумму..." class="sum_receipt_select" multiple>
-                                    <?php foreach ($receipt_no_pay as $k => $value) : ?>
-                                        <option value="<?= $value['summa'];?>" data-number="<?= $value['number'];?>"
-                                            <?php //if (in_array(array('number' => $value['number'], 'summa' => $value['summa']), $receipt_select)) echo " selected";?>
-                                            <?php if (in_array($value['summa'], $_SESSION['form_data']['sum'])) echo " selected";?>
-                                        ><?= $value['summa'];?></option>
+                                    <?php foreach ($receipt_all as $k => $value) : ?>
+                                        <option value="<?= $value['sum'];?>" data-id="<?= $value['id'];?>"
+                                            <?php if (in_array($value['id'], explode(';', $payment['receipts_id']))) echo " selected";?>
+                                        ><?= $value['sum'];?></option>
                                     <?php endforeach; ?>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Выберите приход для оплаты
+                                    Выберите оплачиваемую сумму
                                 </div>
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="vat">НДС</label>
                                 <select class="form-control" name="vat" id="vat">
-                                    <option value="1.20" <?php if ($_SESSION['form_data']['vat'] == '1.20') { echo ' selected';} ?>>20%</option>
-                                    <option value="1.00" <?php if ($_SESSION['form_data']['vat'] == '1.00') { echo ' selected';} ?>>Без НДС</option>
+                                    <option value="1.20" <?php if ($payment['vat'] == '1.20') { echo ' selected';} ?>>20%</option>
+                                    <option value="1.00" <?php if ($payment['vat'] == '1.00') { echo ' selected';} ?>>Без НДС</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Выберите ставку НДС
@@ -103,10 +73,9 @@
                             <div class="has-feedback col-md-6">
                                 <label for="receipt_select">Номера приходов</label><br>
                                 <select name="receipt[]" id="receipt_select" data-placeholder="Выберите приход..." class="number_receipt_select" multiple>
-                                    <?php foreach ($receipt_no_pay as $k => $value) : ?>
-                                        <option value="<?= $value['number'];?>" data-sum="<?= $value['summa'];?>"
-                                            <?php //if (in_array(array('number' => $value['number'], 'summa' => $value['summa']), $receipt_select)) echo " selected";?>
-                                            <?php if (in_array($value['number'], $_SESSION['form_data']['receipt'])) echo " selected";?>
+                                    <?php foreach ($receipt_all as $k => $value) : ?>
+                                        <option value="<?= $value['number'];?>" data-id="<?= $value['id'];?>"
+                                            <?php if (in_array($value['id'], explode(';', $payment['receipts_id']))) echo " selected";?>
                                         ><?= $value['number'];?></option>
                                     <?php endforeach; ?>
                                 </select>
@@ -116,7 +85,7 @@
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="date_pay">Дата оплаты</label>
-                                <input type="date" name="date_pay" class="form-control" id="date_pay" placeholder="" value="<?=isset($_SESSION['form_data']['date_pay']) ? $_SESSION['form_data']['date_pay'] : '';?>" required>
+                                <input type="date" name="date_pay" class="form-control" id="date_pay" placeholder="" value="<?=$payment['date_pay'] ?? '';?>" required>
                                 <div class="invalid-feedback">
                                     Введите дату предпологаемой оплаты
                                 </div>
@@ -127,17 +96,7 @@
                                     <?php foreach ($ers as $k => $v) : ?>
                                         <optgroup label="<?= $v['budget'];?>">
                                             <option value="<?= $v['number'];?>"
-                                                <?php
-                                                //if (isset($ers_sel)) {
-                                                if (isset($_SESSION['form_data']['num_er'])) {
-                                                    foreach ($_SESSION['form_data']['num_er'] as $er) {
-                                                        //if ($er['number'] == $v['number']) {
-                                                        if ($er == $v['number']) {
-                                                            echo " selected";
-                                                        }
-                                                    }
-                                                }
-                                                ?>
+                                                <?php if (in_array($v['id'], explode(';', $payment['ers_id']))) echo " selected"; ?>
                                             ><?= $v['number'];?></option>
                                         </optgroup>
                                     <?php endforeach; ?>
@@ -148,37 +107,28 @@
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="sum_er">Сумма ЕР</label>
-                                <?php
-                                /*$sum_str = '';
-                                if (isset($ers_sel)) {
-                                    foreach ($ers_sel as $er) {
-                                        $sum_str .= $er['summa'] . ';';
-                                    }
-                                    $sum_str = rtrim($sum_str, ';');
-                                }*/
-                                ?>
-                                <input type="text" name="sum_er" class="form-control" id="sum_er" placeholder="" value="<?=isset($_SESSION['form_data']['sum_er']) ? $_SESSION['form_data']['sum_er'] : '';?>" required>
+                                <input type="text" name="sum_er" class="form-control" id="sum_er" placeholder="" value="<?=$payment['sum_er'] ?? '';?>" required>
                                 <div class="invalid-feedback">
                                     Введите суммы для оплаты
                                 </div>
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="num_bo">Номер БО</label>
-                                <input type="text" name="num_bo" class="form-control" id="num_bo"  placeholder="Номер документа" value="<?=isset($_SESSION['form_data']['num_bo']) ? $_SESSION['form_data']['num_bo'] : '';?>" required>
+                                <input type="text" name="num_bo" class="form-control" id="num_bo"  placeholder="Номер документа" value="<?=$payment['num_bo'] ?? '';?>" required>
                                 <div class="invalid-feedback">
                                     Введите номера БО используемых для оплаты
                                 </div>
                             </div>
                             <div class="has-feedback col-md-6">
                                 <label for="sum_bo">Сумма БО</label>
-                                <input type="text" name="sum_bo" class="form-control" id="sum_bo" placeholder="" value="<?=isset($_SESSION['form_data']['sum_bo']) ? $_SESSION['form_data']['sum_bo'] : '';?>" required>
+                                <input type="text" name="sum_bo" class="form-control" id="sum_bo" placeholder="" value="<?=$payment['sum_bo'] ?? '';?>" required>
                                 <div class="invalid-feedback">
                                     Введите суммы БО используемых для оплаты
                                 </div>
                             </div>
-                            <input type="hidden" name="id_partner" value="<?=isset($_SESSION['form_data']['id_partner']) ? $_SESSION['form_data']['id_partner'] : '';?>">
-                            <input type="hidden" name="id" value="<?=isset($payments['id']) ? $payments['id'] : '';?>">
-                            <input type="hidden" name="inn" value="<?=isset($_SESSION['form_data']['inn']) ? $_SESSION['form_data']['inn'] : '';?>">
+                            <input type="hidden" name="id_partner" value="<?=$payment['id_partner'] ?? '';?>">
+                            <input type="hidden" name="id" value="<?=$payments['id'] ?? '';?>">
+                            <input type="hidden" name="inn" value="<?=$payment['inn'] ?? '';?>">
                             <div class="form-group text-center">
                                 <button type="submit" class="btn btn-primary mt-3">Создать оплату</button>
                             </div>

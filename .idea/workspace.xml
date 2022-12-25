@@ -7,8 +7,11 @@
     <list default="true" id="625bb32d-4d2a-4508-8be7-117a0152ec28" name="Changes" comment="Добавлена чтение">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PartnerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Er.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Er.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Partner/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Partner/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/test.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/workplace/core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/workplace/core/App.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +55,10 @@
       <workItem from="1664517080230" duration="213000" />
       <workItem from="1665065787803" duration="32000" />
       <workItem from="1668250037214" duration="4430000" />
+      <workItem from="1668340255333" duration="1252000" />
+      <workItem from="1671722729810" duration="87000" />
+      <workItem from="1671949910477" duration="616000" />
+      <workItem from="1671956096604" duration="7761000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлена чтение">
       <created>1664516786228</created>
@@ -81,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668250239476</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Добавлена чтение">
+      <created>1668340295601</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668340295601</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

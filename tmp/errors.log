@@ -326,3 +326,13 @@
 --------------------
 [2022-11-13 08:50:05] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
 --------------------
+[2022-12-25 11:07:55] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2022-12-25 11:09:38] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2022-12-25 11:17:20] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2022-12-25 13:49:27] Текст ошибки: Call to undefined method app\models\Partner::getPartnerByID() | Файл: E:\OpenServer\domains\test.loc\app\controllers\ReceiptController.php | Строка: 31
+--------------------
+[2022-12-25 18:22:12] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------

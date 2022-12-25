@@ -94,6 +94,17 @@ class Er extends AppModel {
     }
 
     /**
+     * Возвращает все ЕР на указанную дату
+     * @param $partner_id integer идентификатор КА
+     * @param $date string строковое представление даты
+     * @return array
+     */
+    public function getERFromDatePayment(int $partner_id, string $date): array {
+        $ers = R::getAll("SELECT er.*, budget_items.name_budget_item FROM er, budget_items WHERE (budget_items.id = er.id_budget_item) AND (data_start <= '$date') AND (data_end >= '$date') AND id_partner = ?", [$partner_id]);
+        return $ers;
+    }
+
+    /**
      * Возвращает расход денежных средств по ЕР
      * @param $er_id int идентификатор ЕР
      * @return float
