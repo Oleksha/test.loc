@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="625bb32d-4d2a-4508-8be7-117a0152ec28" name="Changes" comment="Добавлена чтение">
+      <change afterPath="$PROJECT_DIR$/test.rar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PartnerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Er.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Er.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ReceiptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ReceiptController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Receipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Receipt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Partner/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Partner/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Partner/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Partner/view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/workplace/core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/workplace/core/App.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,11 @@
       <workItem from="1668340255333" duration="1252000" />
       <workItem from="1671722729810" duration="87000" />
       <workItem from="1671949910477" duration="616000" />
-      <workItem from="1671956096604" duration="7761000" />
+      <workItem from="1671956096604" duration="9085000" />
+      <workItem from="1672490929746" duration="1134000" />
+      <workItem from="1672551863888" duration="5187000" />
+      <workItem from="1672575699402" duration="1481000" />
+      <workItem from="1672643414992" duration="8224000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлена чтение">
       <created>1664516786228</created>
@@ -95,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668340295601</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлена чтение">
+      <created>1671993468244</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671993468244</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Добавлена чтение">
+      <created>1672492644661</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672492644661</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,6 +16,7 @@ class Receipt extends AppModel {
         'date_doc' => '',
         'note' => null,
         'num_pay' => null,
+        'pay_id' => null,
         'date_pay' => null,
     ];
 
@@ -62,6 +63,22 @@ class Receipt extends AppModel {
             }
         }
         return $isType;
+    }
+
+    /**
+     * Функция возвращающая массив полных данных по приходам
+     * @param $id array Строка ID приходов оплачиваемых данно ЗО
+     * @return array Полные данные о приходах
+     */
+    public function getReceipts(array $id): array {
+        $receipts = []; // объявляем массив
+        // проходимся по всем элементам массива
+        //$receipt = explode(';', $id);
+        foreach ($id as $item) {
+            $receipt_full = \R::findOne('receipt', "id = ?", [$item]);
+            $receipts[] = $receipt_full;
+        }
+        return $receipts;
     }
 
 }

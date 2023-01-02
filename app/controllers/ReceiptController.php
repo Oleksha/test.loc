@@ -369,71 +369,78 @@ class ReceiptController extends AppController {
      * @return void
      */
     public function payReceiptAction() {
+        // создаем объекты для работы с БД
+        $receipt_model = new Receipt(); // для приходов
+        $er_model = new Er();           // для ЕР
+        $budget_model = new Budget();   // экземпляр модели Budget
         // получаем данные пришедшие методом POST
         $pay_receipt = !empty($_POST) ? $_POST : null;
+/*
         // проверяем полученные данные
         if (!$this->checkPay($pay_receipt)) {
             // запоминаем значения формы
             $_SESSION['form_data'] = $pay_receipt;
             //debug($_SESSION['form_data']);die;
             redirect();
-        }
-        $receipts = $this->getReceipts($pay_receipt['receipt']); // получаем массив ID приходов
-        // исправляем данные пришедшие в виде массива        
-        $pay_receipt['num_er'] = $this->prepareData($pay_receipt['num_er']);
+        }*/
+        $receipts = $receipt_model->getReceipts($pay_receipt['receipt']); // получаем массив ID приходов
+        // исправляем данные пришедшие в виде массива
         $pay_receipt['sum'] = $this->prepareData($pay_receipt['sum']);
-        $pay_receipt['receipt'] = $this->prepareData($pay_receipt['receipt']);
+        $pay_receipt['receipts_id'] = $this->prepareData($pay_receipt['receipt']);
+        $str = ''; // обнуляем переменную
+        foreach ($receipts as &$value) {
+            $str .= $value['number'] . '/' . mb_substr($value['date'], 0, 4) . ';';  // добавляем значение массива с символом ; в конце
+        }
+        $pay_receipt['receipt'] = rtrim($str, ';');
+        $pay_receipt['ers_id'] = $this->prepareData($pay_receipt['num_er']);
+        $str = ''; // обнуляем переменную
+        foreach ($pay_receipt['num_er'] as &$value) {
+            $er = $er_model->getEr($value);
+            $str .= $er['number'] . ';';  // добавляем значение массива с символом ; в конце
+        }
+        $pay_receipt['num_er'] = rtrim($str, ';');
         if (empty($pay_receipt['date_pay'])) $pay_receipt['date_pay'] = null;
+        $pay_receipt['sum_er'] = $this->prepareData($pay_receipt['sum_er']);
+        // добавляем ID бюджетных операций
+        $str = ''; // обнуляем переменную
+        foreach (explode(';', $pay_receipt['num_bo']) as &$value) {
+            $bo = $budget_model->getBo($value);
+            $str .= $bo['id'] . ';';  // добавляем значение массива с символом ; в конце
+        }
+        $pay_receipt['bos_id'] = rtrim($str, ';');
         // внесение изменений в ЗО
-        $pay = new Payment();
-        $pay->load($pay_receipt);
+        $payment_model = new Payment();
+        $payment_model->load($pay_receipt);
+
         if (empty($pay_receipt['id'])) {
             // это новая ЗО
-            $pay->save('payment'); 
+            $payment_id = $payment_model->save('payment');
         } else {
             // это редактируемая ЗО
-            $pay->edit('payment', $pay_receipt['id']);            
+            $payment_model->edit('payment', $pay_receipt['id']);
+            $payment_id = $pay_receipt['id'];
         }
         // внесение изменений в приходы
-        foreach ($receipts as $value) {
-            $edit_receipt['id'] = $value['id'];
-            $edit_receipt['date'] = $value['date'];
-            $edit_receipt['number'] = $value['number'];
-            $edit_receipt['sum'] = $value['sum'];
-            $edit_receipt['type'] = $value['type'];
-            $edit_receipt['vat'] = $value['vat'];
-            $edit_receipt['partner_name'] = $value['partner'];
-            $edit_receipt['id_partner'] = $value['id_partner'];
-            $edit_receipt['num_doc'] = $value['num_doc'];
-            $edit_receipt['date_doc'] = $value['date_doc'];
-            $edit_receipt['note'] = $value['note'];
+        foreach ($receipts as $item) {
+            $edit_receipt['id'] = $item['id'];
+            $edit_receipt['date'] = $item['date'];
+            $edit_receipt['number'] = $item['number'];
+            $edit_receipt['sum'] = $item['sum'];
+            $edit_receipt['type'] = $item['type'];
+            $edit_receipt['vat'] = $item['vat'];
+            $edit_receipt['id_partner'] = $item['id_partner'];
+            $edit_receipt['num_doc'] = $item['num_doc'];
+            $edit_receipt['date_doc'] = $item['date_doc'];
+            $edit_receipt['note'] = $item['note'];
             $edit_receipt['num_pay'] = dateYear($pay_receipt['number'], $pay_receipt['date']);
-            $edit_receipt['date_pay'] = $value['date_pay'];
+            $edit_receipt['pay_id'] = $payment_id;
+            $edit_receipt['date_pay'] = $item['date_pay'];
             $receipt = new Receipt();
             $receipt->load($edit_receipt);
             $receipt->edit('receipt', $edit_receipt['id']);
         }
         unset($_SESSION['form_data']);
-        redirect("/partner/{$pay_receipt['inn']}");
-    }
-
-    /**
-     * Функция возвращающая массив полных данных по приходам
-     * @param $receipt array Строка составных номеров приходов оплаченных данно ЗО
-     * @return array Полные данные о приходах
-     */
-    public function getReceipts($receipt) {
-        $receipts = []; // объявляем массив
-        // проходимся по всем элементам массива
-        foreach ($receipt as &$value) {
-            $num_receipt = explode('/', $value); // получаем составной номер прихода
-            $number = $num_receipt[0]; // выделяем номер
-            $year = $num_receipt[1];   // выделяем год
-            // получаем полные данные о приходе
-            $receipt_full = \R::findOne('receipt', "number = ? AND YEAR(date) = {$year}", [$number]);
-            $receipts[] = $receipt_full;
-        }
-        return $receipts;
+        redirect("/partner/{$pay_receipt['id_partner']}");
     }
 
 }

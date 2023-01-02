@@ -158,7 +158,7 @@
                                                             }
                                                             ?>
                                                             <td class="text-center h-100 align-middle">
-                                                                <a type="button" href="partner/payment?receipt=<?= $item['id'];?>" class="btn btn-outline-primary btn-sm my-btn" data-toggle="tooltip" data-placement="top" title="<?= $title; ?>">
+                                                                <a type="button" href="partner/payment?receipt=<?= $item['id'];?>&type=<?= $item['type'];?>" class="btn btn-outline-primary btn-sm my-btn" data-toggle="tooltip" data-placement="top" title="<?= $title; ?>">
                                                                     <?= $svg; ?>
                                                                 </a>
                                                                 <a type="button" class="btn btn-outline-primary btn-sm my-btn" data-toggle="tooltip" data-placement="top" title="Удалить" href="receipt/del?id=<?= $item['id'];?>" onclick="return window.confirm('OK?');">
@@ -231,7 +231,7 @@
                                                         }
                                                         ?>
                                                         <td class="text-center h-100 align-middle">
-                                                            <a type="button" href="partner/payment?receipt=<?= $item['id'];?>" class="btn btn-outline-primary btn-sm my-btn" data-toggle="tooltip" data-placement="top" title="<?= $title; ?>">
+                                                            <a type="button" href="partner/payment?receipt=<?= $item['id'];?>&type=<?= $item['type'];?>" class="btn btn-outline-primary btn-sm my-btn" data-toggle="tooltip" data-placement="top" title="<?= $title; ?>">
                                                                 <?= $svg; ?>
                                                             </a>
                                                                 <a type="button" class="btn btn-outline-primary btn-sm my-btn" data-toggle="tooltip" data-placement="top" title="Удалить" href="receipt/del?id=<?= $item['id'];?>" onclick="return window.confirm('OK?');">

@@ -144,13 +144,12 @@ class PartnerController extends AppController {
         $er_model = new Er();           // для ЕР
         $payment_model = new Payment(); // для ЗО
         $payment = []; // Если ЗО есть получаем данные о ней
-        if ($type == 1 || $type == 2) $payment = $payment_model->getPaymentReceipt($receipt_id);
+        /*if ($type == 1 || $type == 2)*/ $payment = $payment_model->getPaymentReceipt($receipt_id);
         // получаем всю информацию о текущем поступлении
         $receipt = $receipt_model->getReceipt('id', $receipt_id);
         $receipt = $receipt[0];
         $receipt_all = []; // получаем информацию о неоплаченных поступлениях
-        if ($type == 2 || $type == 3) $receipt_all = $receipt_model->getReceiptNoPay($receipt['id_partner']);
-        //debug($receipt_all);die;
+        /*if ($type == 2 || $type == 3)*/ $receipt_all = $receipt_model->getReceiptNoPay($receipt['id_partner']);
         // получаем всю информацию о КА
         $partner = $partner_model->getPartner($receipt['id_partner']);
         /* Получаем все действующие ЕР для этого КА на момент прихода */
@@ -160,11 +159,10 @@ class PartnerController extends AppController {
             $er[$k]['id'] = $v['id'];                                             // идентификатор
             $er[$k]['budget'] = $v['name_budget_item'];                           // статья расхода
             $er[$k]['number'] = $v['number'];                                     // номер ЕР
-            //$er[$k]['summa'] = round($v['summa'] - $v['costs'],2);  // остаток денежных средств
         }
         $ers = $er;
         // Передаем полученные данные в вид
-        $this->set(compact('payment','receipt', 'receipt_all', 'partner', 'ers'));//, 'receipt_select', 'receipt_no_pay', 'ers_sel', 'payments', 'vat'));
+        $this->set(compact('payment','receipt', 'receipt_all', 'partner', 'ers', 'type'));
 
     }
 
