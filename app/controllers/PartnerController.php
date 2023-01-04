@@ -151,6 +151,7 @@ class PartnerController extends AppController {
         $receipt_all = []; // получаем информацию о неоплаченных поступлениях
         /*if ($type == 2 || $type == 3)*/ $receipt_all = $receipt_model->getReceiptNoPay($receipt['id_partner']);
         // получаем всю информацию о КА
+        //debug($receipt_all);die;
         $partner = $partner_model->getPartner($receipt['id_partner']);
         /* Получаем все действующие ЕР для этого КА на момент прихода */
         $ers = $er_model->getERFromDatePayment($partner['id'], $receipt['date']);
@@ -161,6 +162,8 @@ class PartnerController extends AppController {
             $er[$k]['number'] = $v['number'];                                     // номер ЕР
         }
         $ers = $er;
+        // формируем метатеги для страницы
+        $this->setMeta('Заявка на оплату - ' . $partner['name'],'Заявка на оплату', 'Описание...', 'Ключевые слова...');
         // Передаем полученные данные в вид
         $this->set(compact('payment','receipt', 'receipt_all', 'partner', 'ers', 'type'));
 

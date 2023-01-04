@@ -81,4 +81,10 @@ class Receipt extends AppModel {
         return $receipts;
     }
 
+    public function getReceiptMain(): array {
+        $receipts = \R::getAssocRow("SELECT * FROM receipt WHERE (date_pay is NULL) OR (date_pay = CURDATE())");
+        if (!empty($receipts)) return $receipts;
+        return false;
+    }
+
 }

@@ -119,4 +119,14 @@ class Payment extends AppModel {
         return false;
     }
 
+    /**
+     * Возвращает массив всех оплат
+     * @return array|false
+     */
+    public function getPaymentAll() {
+        $payments = \R::getAssocRow("SELECT * FROM payment");
+        if (!empty($payments)) return $payments;
+        return false;
+    }
+
 }

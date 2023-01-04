@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="625bb32d-4d2a-4508-8be7-117a0152ec28" name="Changes" comment="Добавлена чтение">
-      <change afterPath="$PROJECT_DIR$/test.rar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/PartnerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PartnerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/ReceiptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ReceiptController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Receipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Receipt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Budget/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Budget/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Main/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Partner/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Partner/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Partner/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Partner/view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/errors.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +36,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -64,7 +66,9 @@
       <workItem from="1672490929746" duration="1134000" />
       <workItem from="1672551863888" duration="5187000" />
       <workItem from="1672575699402" duration="1481000" />
-      <workItem from="1672643414992" duration="8224000" />
+      <workItem from="1672643414992" duration="10506000" />
+      <workItem from="1672733264174" duration="14675000" />
+      <workItem from="1672841504156" duration="4053000" />
     </task>
     <task id="LOCAL-00001" summary="Добавлена чтение">
       <created>1664516786228</created>
@@ -115,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672492644661</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавлена чтение">
+      <created>1672658542273</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672658542274</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

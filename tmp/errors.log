@@ -508,3 +508,65 @@
 --------------------
 [2023-01-02 14:21:22] Текст ошибки: Call to undefined method app\models\Partner::getPartnerByID() | Файл: E:\OpenServer\domains\test.loc\app\controllers\ReceiptController.php | Строка: 61
 --------------------
+[2023-01-02 18:50:31] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-02 18:50:59] Текст ошибки: Call to undefined method app\models\Partner::getPartnerByID() | Файл: E:\OpenServer\domains\test.loc\app\controllers\ReceiptController.php | Строка: 61
+--------------------
+[2023-01-02 18:54:35] Текст ошибки: Call to undefined method app\models\Partner::getPartnerByID() | Файл: E:\OpenServer\domains\test.loc\app\controllers\ReceiptController.php | Строка: 31
+--------------------
+[2023-01-03 11:12:19] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 11:18:39] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 11:28:46] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 11:42:51] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-03 11:42:54] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-03 12:02:02] Текст ошибки: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: '' for column `test`.`payment`.`id_partner` at row 1 | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-03 12:02:03] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 12:05:07] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 12:06:32] Текст ошибки: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: '' for column `test`.`payment`.`id_partner` at row 1 | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-03 12:06:32] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 12:09:14] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 12:50:45] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 13:55:32] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 18:41:24] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-03 18:43:01] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-04 17:11:54] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-04 17:12:17] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 17:14:08] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 17:14:13] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 17:16:29] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 17:16:37] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 17:16:49] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 17:17:11] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 18:10:46] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-04 18:22:36] Текст ошибки: Контрагент с ID 2312190946 не найден | Файл: E:\OpenServer\domains\test.loc\app\controllers\PartnerController.php | Строка: 54
+--------------------
+[2023-01-04 18:22:36] Текст ошибки: Страница не найдена | Файл: E:\OpenServer\domains\test.loc\vendor\workplace\core\Router.php | Строка: 49
+--------------------
+[2023-01-04 18:24:46] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
+[2023-01-04 18:24:50] Текст ошибки: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.budget_item' doesn't exist | Файл: E:\OpenServer\domains\test.loc\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка: 202
+--------------------
