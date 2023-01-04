@@ -3,3 +3,10 @@
 /.idea/php.xml
 /.idea/test.loc.iml
 /.idea/workspace.xml
+/.idea/dataSources.local.xml
+/.idea/dataSources.xml
+/.idea/sqldialects.xml
+/.idea/dataSources/0ae3af55-b321-43e5-8ed5-9b759bf774cf.xml
+/.idea/dataSources/0ae3af55-b321-43e5-8ed5-9b759bf774cf/storage_v2/_src_/schema/information_schema.FNRwLQ.meta
+/.idea/dataSources/0ae3af55-b321-43e5-8ed5-9b759bf774cf/storage_v2/_src_/schema/performance_schema.kIw0nw.meta
+/.idea/dataSources/0ae3af55-b321-43e5-8ed5-9b759bf774cf/storage_v2/_src_/schema/mysql.osA4Bg.meta
